@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Telegram OTP Login</title>
+</head>
+<body>
+
+<h2>Login with Telegram</h2>
+
+<input id="telegram" placeholder="Telegram Username / ID">
+<button onclick="sendOTP()">Send OTP</button>
+
+<br><br>
+
+<input id="otp" placeholder="Enter OTP">
+<button onclick="verifyOTP()">Verify</button>
+
+<script>
+let sessionId = "";
+
+function sendOTP() {
+  fetch("http://localhost:3000/request-otp", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      telegram: telegram.value
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    sessionId = data.sessionId;
+    window.open(data.botLink, "_blank");
+    alert("OTP sent to Telegram");
+  });
+}
+
+function verifyOTP() {
+  fetch("http://localhost:3000/verify-otp", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      sessionId,
+      otp: otp.value
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      alert("Login successful");
+    } else {
+      alert("Invalid OTP");
+    }
+  });
+}
+</script>
+
+</body>
+</html>

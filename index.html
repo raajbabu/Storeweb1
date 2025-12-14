@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Colourful Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">🛒 ColorStore</div>
+  <div class="nav-btns">
+    <button onclick="openLogin()">Login</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Buy Premium Products Instantly</h1>
+  <p>Secure • Fast • Telegram Login</p>
+  <button class="hero-btn">Shop Now</button>
+</section>
+
+<!-- Products -->
+<section class="products">
+  <h2>🔥 Our Products</h2>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300" alt="">
+      <h3>Premium AutoLike</h3>
+      <p>Instant delivery service</p>
+      <span>₹150</span>
+      <button onclick="buyProduct()">Buy Now</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300" alt="">
+      <h3>VIP Membership</h3>
+      <p>Full access features</p>
+      <span>₹499</span>
+      <button onclick="buyProduct()">Buy Now</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300" alt="">
+      <h3>Reseller Panel</h3>
+      <p>Start your own store</p>
+      <span>₹999</span>
+      <button onclick="buyProduct()">Buy Now</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Login Modal -->
+<div class="modal" id="loginModal">
+  <div class="modal-box">
+    <h2>Login with Telegram</h2>
+    <input type="text" placeholder="Telegram Username">
+    <button class="tg-btn">Login</button>
+    <button class="close-btn" onclick="closeLogin()">Close</button>
+  </div>
+</div>
+
+<footer>
+  © 2025 ColorStore • All Rights Reserved
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
