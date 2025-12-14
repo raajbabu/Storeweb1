@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ZERO FF TOOL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>🔥 ZERO FF TOOL</h1>
+  <button class="login-btn" onclick="openLogin()">Login</button>
+</header>
+
+<section class="products">
+  <h2>Our Products</h2>
+
+  <div class="card">
+    <h3>Premium AutoLike</h3>
+    <p>Instant delivery service</p>
+    <span>₹150</span>
+    <button onclick="requireLogin()">Buy Now</button>
+  </div>
+
+  <div class="card">
+    <h3>VIP Membership</h3>
+    <p>Full access features</p>
+    <span>₹499</span>
+    <button onclick="requireLogin()">Buy Now</button>
+  </div>
+</section>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
+  <div class="modal-box">
+    <h2>Login with Telegram</h2>
+
+    <input id="telegram" placeholder="Telegram Username" />
+    <button onclick="sendOTP()">Send OTP</button>
+
+    <input id="otp" placeholder="Enter OTP" />
+    <button onclick="verifyOTP()">Verify OTP</button>
+
+    <button class="close-btn" onclick="closeLogin()">Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
